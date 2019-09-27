@@ -16,5 +16,10 @@ namespace TodoListM.Models
             get;
             set;
         }
+        public bool Done
+        {
+            get;
+            set;
+        }
     }
 }

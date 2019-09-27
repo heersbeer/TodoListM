@@ -1,25 +1,37 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 using TodoListM.Models;
 using TodoListM.Services;
 using TodoListM.ViewModels.Base;
+using Xamarin.Forms;
 
 namespace TodoListM.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
+        // Deze definieren zodat je ook buiten de contructor toegang hebt
+        TodoItemServices service;
         public MainViewModel()
         {
-            var service = new TodoItemServices();
-
+            service = new TodoItemServices();
             TodoItemList = service.GetTodoItems();
         }
-        private List<TodoItem> todoItems;
-        public List<TodoItem> TodoItemList
+
+        private ObservableCollection<TodoItem> todoItems;
+        public ObservableCollection<TodoItem> TodoItemList
         {
             get { return todoItems; }
             set { SetProperty(ref todoItems, value); }
         }
-       
+
+        public ICommand AddItemCommand => new Command(AddTodoItem);
+        private void AddTodoItem()
+        {
+        
+        }
+
+
     }
 }

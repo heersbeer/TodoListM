@@ -6,24 +6,21 @@
              mc:Ignorable="d"
              x:Class="TodoListM.MainPage">
 
-    <StackLayout>
-        <ListView ItemsSource="{Binding TodoItemList}">
+    <StackLayout Orientation="Vertical" BackgroundColor="White" Margin="10,10,10,10">
+        <ListView ItemsSource="{Binding TodoItemList}" ItemTapped="OnListViewItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-
-                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" Margin="15,0,0,0">
-
-                            <Label Text="{Binding Name}"/>
-
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="15,0,0,0">
+                                <Label Text="{Binding Name}" Font="Bold, 20" />
+                                <CheckBox IsChecked="{Binding Done}" />
                         </StackLayout>
-                        
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
-        
+        <Button Text="Add Item" BackgroundColor="Silver" FontAttributes="Bold" TextColor="Black" Clicked="AddItem"/>
     </StackLayout>
 
 </ContentPage>

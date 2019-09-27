@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using TodoListM.Models;
 
 namespace TodoListM.Services
@@ -9,14 +10,15 @@ namespace TodoListM.Services
         {
         }
 
-        public List<TodoItem> GetTodoItems()
+        public ObservableCollection<TodoItem> GetTodoItems()
         {
-            var list = new List<TodoItem>
+            var list = new ObservableCollection<TodoItem>
             {
                 new TodoItem
                 {
                     Name = "Hond",
-                    Task = "Uitlaten"
+                    Task = "Uitlaten",
+                    Done = true
                 },
                 new TodoItem
                 {
@@ -31,6 +33,7 @@ namespace TodoListM.Services
             };
             return list;
         }
+        
          
     }
 }
