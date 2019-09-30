@@ -1,18 +1,14 @@
-﻿using System.Windows.Input;
-using Xamarin.Forms;
-using TodoListM.Models;
-using TodoListM.ViewModels;
-
+﻿
+using TodoListM.ViewModels.Base;
+using System;
 
 namespace TodoListM.ViewModels
 {
-    class TodoItemViewModel
+    class TodoItemViewModel : ViewModelBase
     {
-
-        public ICommand SaveCommand => new Command(SaveTodoItem);
-        private void SaveTodoItem()
+        public TodoItemViewModel()
         {
-            //TodoItemList.Add(new TodoItem { Name = "Henk", Task = "Hondehond" });
+            Console.WriteLine("TodoItemViewModel");
         }
     }
 }

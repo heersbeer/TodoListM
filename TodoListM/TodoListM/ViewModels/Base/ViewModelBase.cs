@@ -3,10 +3,11 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using TodoListM.Services.Navigation;
 using System.Threading.Tasks;
+using TodoListM.ViewModels.Base;
 
 namespace TodoListM.ViewModels.Base
 {
-    public class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : ExtendedBindableObject
     {
 
         protected readonly INavigationService NavigationService;
@@ -23,7 +24,7 @@ namespace TodoListM.ViewModels.Base
             set
             {
                 _isBusy = value;
-                //RaisePropertyChanged(() => IsBusy);
+                RaisePropertyChanged(() => IsBusy);
             }
         }
 

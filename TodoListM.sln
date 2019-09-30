@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListM.Android", "TodoListM\TodoListM.Android\TodoListM.Android.csproj", "{CDF803B0-6E5A-4C38-9CE8-F2E65AC01231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListM", "TodoListM\TodoListM\TodoListM.csproj", "{D7E7DB54-3EC4-407D-96ED-66354CB5ECE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoListM", "TodoListM\TodoListM\TodoListM.csproj", "{D7E7DB54-3EC4-407D-96ED-66354CB5ECE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

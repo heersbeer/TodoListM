@@ -4,23 +4,33 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TodoListM.MainPage">
+             x:Class="TodoListM.MainPage"
+             xmlns:viewModelBase="clr-namespace:TodoListM.ViewModels.Base;assembly=TodoListM"
+             viewModelBase:ViewModelLocator.AutoWireViewModel="true">
 
     <StackLayout Orientation="Vertical" BackgroundColor="White" Margin="10,10,10,10">
-        <ListView ItemsSource="{Binding TodoItemList}" ItemTapped="OnListViewItemTapped">
+        <ListView ItemsSource="{Binding TodoItems}" ItemTapped="OnListViewItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="15,0,0,0">
-                                <Label Text="{Binding Name}" Font="Bold, 20" />
-                                <CheckBox IsChecked="{Binding Done}" />
+                            <Label Text="{Binding Name}" Font="Bold, 20" />
+                            <CheckBox IsChecked="{Binding Done}" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
+        <ListView.Footer>
+            <StackLayout Orientation="Vertical">
+                <!-- Roep het AddTodoItemCommand in het MainViewModel aan -->
+                    <Button Text="Add Item" Command="{Binding AddTodoItemCommand}" HeightRequest="50" />
+                <!-- Roep het AddTodoItemCommand in het MainViewModel aan -->
+                <Button Text="Synchrone actie" Command="{Binding SynchronousCommand}" HeightRequest="50" />
+                <!-- Roep het AddTodoItemCommand in het MainViewModel aan -->
+                <Button Text="Asynchrone actie" Command="{Binding AsynchronousCommand}" HeightRequest="50" />
+            </StackLayout>
+        </ListView.Footer>
         </ListView>
-
-        <Button Text="Add Item" BackgroundColor="Silver" FontAttributes="Bold" TextColor="Black" Clicked="AddItem"/>
     </StackLayout>
 
 </ContentPage>
