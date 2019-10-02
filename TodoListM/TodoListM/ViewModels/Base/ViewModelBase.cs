@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using TodoListM.Services.Navigation;
 using System.Threading.Tasks;
-using TodoListM.ViewModels.Base;
 
 namespace TodoListM.ViewModels.Base
 {

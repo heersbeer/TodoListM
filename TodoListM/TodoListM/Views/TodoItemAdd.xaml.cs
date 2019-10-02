@@ -1,4 +1,5 @@
 ﻿using System.Windows.Input;
+using TodoListM.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,6 +12,7 @@ namespace TodoListM.Views
         public TodoItemAdd()
         {
             InitializeComponent();
+            this.BindingContext = new TodoItemViewModel();
         }
 
         private void SaveItem()
